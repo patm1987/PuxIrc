@@ -24,9 +24,9 @@
             </VisualStateGroup>
         </VisualStateManager.VisualStateGroups>
 		<TextBlock Height="32" Margin="8,8,8,0" TextWrapping="Wrap" Text="Join A Server:" VerticalAlignment="Top" FontSize="24" FontWeight="ExtraBold" TextAlignment="Center"/>
-		<TextBox x:Name="Server" Margin="8,44,120,0" Text="irc.rizon.net" VerticalAlignment="Top"/>
-		<TextBox x:Name="Port" Margin="0,44,8,0" Text="6667" VerticalAlignment="Top" HorizontalAlignment="Right" Width="108"/>
-		<TextBox x:Name="Nick" Margin="8,84,8,0" Text="PuxIRC_Minion" VerticalAlignment="Top"/>
+		<TextBox x:Name="Server" Margin="8,44,120,0" Text="irc.rizon.net" VerticalAlignment="Top" GotFocus="textFieldFocus"/>
+		<TextBox x:Name="Port" Margin="0,44,8,0" Text="6667" VerticalAlignment="Top" HorizontalAlignment="Right" Width="108" GotFocus="textFieldFocus"/>
+		<TextBox x:Name="Nick" Margin="8,84,8,0" Text="PuxIRC_Minion" VerticalAlignment="Top" GotFocus="textFieldFocus"/>
 		<Button x:Name="ConnectButton" Content="Connect" HorizontalAlignment="Stretch" Margin="8,124,8,0" VerticalAlignment="Top" Click="ConnectButton_Click"/>
 	</Grid>
 </UserControl>

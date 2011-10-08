@@ -100,6 +100,16 @@ namespace PuxIrc
 			m_app.login(Server.Text, Port.Text, Nick.Text);
 		}
 
+		//! \brief	Click event handler that causes a field to be cleared
+		private void textFieldFocus(object sender, RoutedEventArgs e)
+		{
+			if (sender is TextBox)
+			{
+				TextBox textBox = (TextBox)sender;
+				textBox.SelectAll();
+			}
+		}
+
 		App m_app;
 	}
 }
