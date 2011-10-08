@@ -44,14 +44,6 @@ namespace PuxIrc
 			m_app.setMessageReceiveHandler(receiveMessage);
         }
 
-		//! \brief	user presses "Send"
-		private void Send_Click(object sender, RoutedEventArgs e)
-		{
-			// send message
-			m_app.sendMessage(MessageBox.Text);
-			MessageBox.Text = "";
-		}
-
 		/*!
 		 * \brief	handle receiving a message from the server
 		 * \note	at some point it would be nice to pretty this up XD
@@ -79,6 +71,28 @@ namespace PuxIrc
 		private void Join_Click(object sender, RoutedEventArgs e)
 		{
 			m_app.join(Channel.Text);
+		}
+
+		//! \brief	user presses "Send"
+		private void Send_Click(object sender, RoutedEventArgs e)
+		{
+			sendCurrentMessage();
+		}
+
+		//! \brief	handle a key up event, for pressing "Enter" and having something happen
+		private void MessageBox_KeyUp(object sender, Windows.UI.Xaml.Input.KeyEventArgs e)
+		{
+			if (e.Key == Windows.System.VirtualKey.Enter)
+			{
+				sendCurrentMessage();
+			}
+		}
+
+		//! \brief	sends the message currently in the message box
+		private void sendCurrentMessage()
+		{
+			m_app.sendMessage(MessageBox.Text);
+			MessageBox.Text = "";
 		}
 
 		App m_app;
