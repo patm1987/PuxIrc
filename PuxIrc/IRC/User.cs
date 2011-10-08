@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace PuxIrc.IRC
 {
+	/*!
+	 * \brief	represents some aggregated data about a user
+	 * */
 	public class User
 	{
 		public User()

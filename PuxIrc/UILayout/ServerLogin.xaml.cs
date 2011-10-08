@@ -11,14 +11,21 @@ using Windows.UI.Xaml.Data;
 
 namespace PuxIrc
 {
+	/*!
+	 * \brief	UI for connecting to a server
+	 * */
 	public sealed partial class ServerLogin
 	{
+		/*!
+		 * \param	app a pointer back to the app
+		 * */
 		public ServerLogin(App app)
 		{
 			m_app = app;
 			InitializeComponent();
 		}
 
+		// NOTE: this is mostly auto-generated code
 		// View state management for switching among Full, Fill, Snapped, and Portrait states
 
 		private DisplayPropertiesEventHandler _displayHandler;
@@ -68,11 +75,12 @@ namespace PuxIrc
 			return "Full";
 		}
 
-		App m_app;
-
+		//! \brief	handle the user pressing the "Connect" button, tell the app to login
 		private void ConnectButton_Click(object sender, RoutedEventArgs e)
 		{
 			m_app.login(Server.Text, Port.Text, Nick.Text);
 		}
+
+		App m_app;
 	}
 }

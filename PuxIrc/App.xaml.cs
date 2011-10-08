@@ -3,6 +3,10 @@ using System.Threading.Tasks;
 using Windows.ApplicationModel.Activation;
 using Windows.UI.Xaml;
 
+/*!
+ * \brief	Main entry point for the IRC GUI frontend
+ * \note	this is very rough
+ * */
 namespace PuxIrc
 {
     partial class App
@@ -19,6 +23,12 @@ namespace PuxIrc
             Window.Current.Activate();
 		}
 
+		/*!
+		 * \brief	login to a server
+		 * \param	server the address of the server
+		 * \param	port the port to connect to on the server
+		 * \param	nick the nick (and username) to use
+		 * */
 		public void login(string server, string port, string nick)
 		{
 			m_server.address = server;
@@ -30,17 +40,28 @@ namespace PuxIrc
 			Window.Current.Activate();
 		}
 
+		/*!
+		 * \brief	joins a channel
+		 * \param	channel the channel to join
+		 * */
 		public void join(string channel)
 		{
 			m_channel = channel;
 			m_server.sendJoin(channel);
 		}
 
+		/*!
+		 * \brief	sends a message to the last channel joined
+		 * \param	message the message to send
+		 * */
 		public void sendMessage(string message)
 		{
 			m_server.sendPrivateMessage(m_channel, message);
 		}
 
+		/*!
+		 * \brief	set some callback that will receive messages from the server
+		 * */
 		public void setMessageReceiveHandler(IRC.Server.Receive receive)
 		{
 			m_server.receiveCallback = receive;
