@@ -33,6 +33,9 @@ namespace PuxIrc
 	 * */
     partial class ChatPage
     {
+		//! \brief	string that identifies a message the user wrote
+		const string kLocalMessageIdentifier = "\t--> ";
+
 		/*!
 		 * \brief	initializes this chat page, with a reference back to the app that spawned it
 		 * \param	app the app that created this page
@@ -50,9 +53,13 @@ namespace PuxIrc
 		 * */
 		void receiveMessage(string message)
 		{
+			// make sure that the message goes in on the UI thread!
 			Dispatcher.InvokeAsync(
 				Windows.UI.Core.CoreDispatcherPriority.Normal,
-				(x,y) => { Chat.Text += message + "\n"; },
+				(x,y) => {
+					Chat.Text += message + "\n";
+					ChatScrollBox.ScrollToVerticalOffset(ChatScrollBox.ExtentHeight - ChatScrollBox.ViewportHeight);
+				},
 				this,
 				null);
 		}
@@ -92,6 +99,9 @@ namespace PuxIrc
 		private void sendCurrentMessage()
 		{
 			m_app.sendMessage(MessageBox.Text);
+
+			// let the user see what he wrote
+			receiveMessage(kLocalMessageIdentifier + MessageBox.Text);
 			MessageBox.Text = "";
 		}
 

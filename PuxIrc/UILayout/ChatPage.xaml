@@ -11,7 +11,7 @@
 		<Button x:Name="Join" Content="Join" HorizontalAlignment="Right" Margin="0,8,8,0" VerticalAlignment="Top" Width="75" Click="Join_Click"/>
 		<TextBox x:Name="MessageBox" Height="17" Margin="8,0,126,8" Text="Message" VerticalAlignment="Bottom" GotFocus="textFieldFocus" KeyUp="MessageBox_KeyUp" AcceptsReturn="true"/>
         <Button x:Name="Send" Content="Send" HorizontalAlignment="Right" Margin="0,0,8,8" VerticalAlignment="Bottom" Width="114" Height="36" Click="Send_Click"/>
-		<ScrollViewer Margin="8,48" >
+		<ScrollViewer x:Name="ChatScrollBox" Margin="8,48" >
 			<TextBlock x:Name="Chat" TextWrapping="Wrap" Text="Channel Chat" VerticalAlignment="Top" Margin="0,0,0,0"/>
 		</ScrollViewer>
 	</Grid>
