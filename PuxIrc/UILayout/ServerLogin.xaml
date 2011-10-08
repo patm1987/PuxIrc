@@ -1,0 +1,32 @@
+﻿<UserControl x:Class="PuxIrc.ServerLogin"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Loaded="Page_Loaded" Unloaded="Page_Unloaded"
+    mc:Ignorable="d"
+    d:DesignWidth="640" d:DesignHeight="480">
+
+    <!--Common resources for default dark theme applications-->
+    <UserControl.Resources>
+        <SolidColorBrush x:Key="PageBackgroundBrush" Color="#FF1A1A1A"/>
+        <SolidColorBrush x:Key="PageForegroundBrush" Color="White"/>
+        <SolidColorBrush x:Key="HighlightBrush" Color="#FF26A0DA"/>
+    </UserControl.Resources>
+
+    <Grid x:Name="LayoutRoot" Background="{StaticResource PageBackgroundBrush}">
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup x:Name="OrientationStates">
+                <VisualState x:Name="Full"/>
+                <VisualState x:Name="Fill"/>
+                <VisualState x:Name="Portrait"/>
+                <VisualState x:Name="Snapped"/>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+		<TextBlock Height="32" Margin="8,8,8,0" TextWrapping="Wrap" Text="Join A Server:" VerticalAlignment="Top" FontSize="24" FontWeight="ExtraBold" TextAlignment="Center"/>
+		<TextBox x:Name="Server" Margin="8,44,120,0" Text="irc.rizon.net" VerticalAlignment="Top"/>
+		<TextBox x:Name="Port" Margin="0,44,8,0" Text="6667" VerticalAlignment="Top" HorizontalAlignment="Right" Width="108"/>
+		<TextBox x:Name="Nick" Margin="8,84,8,0" Text="PuxIRC_Minion" VerticalAlignment="Top"/>
+		<Button x:Name="ConnectButton" Content="Connect" HorizontalAlignment="Stretch" Margin="8,124,8,0" VerticalAlignment="Top" Click="ConnectButton_Click"/>
+	</Grid>
+</UserControl>

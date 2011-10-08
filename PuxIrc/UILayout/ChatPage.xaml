@@ -1,0 +1,19 @@
+﻿<UserControl x:Class="PuxIrc.ChatPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="480" d:DesignWidth="640">
+    
+    <Grid x:Name="LayoutRoot" Background="#FF0C0C0C">
+		<TextBox x:Name="Channel" Height="17" Text="#dpl" VerticalAlignment="Top" Margin="8,8,106,0" GotFocus="textFieldFocus"/>
+		<Button x:Name="Join" Content="Join" HorizontalAlignment="Right" Margin="0,8,8,0" VerticalAlignment="Top" Width="75" Click="Join_Click"/>
+		<TextBox x:Name="MessageBox" Height="17" Margin="8,0,126,8" Text="Message" VerticalAlignment="Bottom"/>
+        <Button x:Name="Send" Content="Send" HorizontalAlignment="Right" Margin="0,0,8,8" VerticalAlignment="Bottom" Width="114" Height="36" Click="Send_Click"/>
+		<ScrollViewer Margin="8,48" >
+			<TextBlock x:Name="Chat" TextWrapping="Wrap" Text="Channel Chat" VerticalAlignment="Top" Margin="0,0,0,0"/>
+		</ScrollViewer>
+	</Grid>
+
+</UserControl>

@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Package xmlns="http://schemas.microsoft.com/appx/2010/manifest">
+  <Identity Name="66e8efc2-1f0b-46ae-aef3-5c99aee67277" Publisher="CN=pux1987" Version="1.0.0.0" />
+  <Properties>
+    <DisplayName>PuxIrc</DisplayName>
+    <PublisherDisplayName>pux1987</PublisherDisplayName>
+    <Logo>Images\StoreLogo.png</Logo>
+    <Description>PuxIrc</Description>
+  </Properties>
+  <Prerequisites>
+    <OSMinVersion>6.2</OSMinVersion>
+    <OSMaxVersionTested>6.2</OSMaxVersionTested>
+  </Prerequisites>
+  <Resources>
+    <Resource Language="en-us" />
+  </Resources>
+  <Applications>
+    <Application Id="App" Executable="puxirc.exe" EntryPoint="PuxIrc.PuxIrc">
+      <VisualElements DisplayName="PuxIrc" Logo="Images\Logo.png" SmallLogo="Images\SmallLogo.png" Description="PuxIrc" ForegroundText="light" BackgroundColor="#222222" InitialRotationPreference="portrait">
+        <SplashScreen Image="Images\SplashScreen.png" />
+      </VisualElements>
+    </Application>
+  </Applications>
+  <Capabilities>
+    <Capability Name="privateNetworkClientServer" />
+    <Capability Name="internetClientServer" />
+    <Capability Name="internetClient" />
+  </Capabilities>
+</Package>
